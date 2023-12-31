@@ -71,11 +71,18 @@
             justify-content: space-between;
             margin: 5px;
         }
-        .imagePost{
+       .imagePost{
             height: 110px;
             width: 110px;
             border-radius: 10px;
             object-fit: cover;
+            transition: ease-in-out 0.2s;
+            cursor: pointer;
+        }
+        .imagePost:hover{
+            transition:  ease-in-out 0.2s;
+            width: 200px;
+            height:200px;
         }
         button{
             width: 300px;
@@ -127,6 +134,17 @@
         function openInsta(){
             window.open("https://www.instagram.com/_.f4hd_/")
         }
+        const element = document.querySelectorAll('.imagePost');
+        const image = document.querySelector('.imagePost');
+        element.forEach(element =>{
+            element.addEventListener('mouseover', () => {
+                document.querySelector(".logo-container").style.display="none"
+            });
+        element.addEventListener('mouseout', () => {
+             document.querySelector(".logo-container").style.display="flex"
+        });
+
+        })
     </script>
 </body>
 </html>
